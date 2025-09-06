@@ -14,14 +14,18 @@ console.log(numberOfPeople);
 const bagCheck = (numberOfPeople) => {
 	
 	let totalBagsPerPerson = 0;
+	let ticketPrice = 0;
+	let suitcaseCost = 0;
 	for(let i = 1; i <= numberOfPeople; i++) {
 		let howManyBags = parseInt(prompt(`How many suitcases is person ${i} bringing?`));
 		console.log(howManyBags);
 		console.log("in the function");
 	  totalBagsPerPerson += howManyBags;
+		ticketPrice = howManyBags* 80;
+		suitcaseCost = totalBagsPerPerson * 40
 		console.log(totalBagsPerPerson);
 	}
-	alert(`${numberOfPeople} people are traveling with ${totalBagsPerPerson} suitcases in total`);
+	alert(`${numberOfPeople} people are traveling with ${totalBagsPerPerson} suitcases in total. Total Price: $${ticketPrice + suitcaseCost}`);
 
 }
 bagCheck(numberOfPeople);

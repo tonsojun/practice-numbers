@@ -83,6 +83,7 @@
 // ************** HEADS OR TAILS **********************
 
 let activateCheats = false;
+let probabilityToGetTails = 0.5;
 
 const button = document.getElementById("my-button");
 
@@ -90,7 +91,7 @@ button.addEventListener("click", () => {
 
 	const randomNumber = Math.random();
 	
-	if (randomNumber > 0.5 || activateCheats) {
+	if (randomNumber > probabilityToGetTails || activateCheats) {
 		console.log("Heads!");
 	} else {
 		console.log("Tails!");
@@ -103,3 +104,9 @@ const buttonTwo = document.getElementById("cheat-button");
 buttonTwo.addEventListener("click", () => {
 	activateCheats = true;
 })
+
+const buttonThree = document.getElementById("hard-mode-button");
+
+buttonThree.addEventListener("click", () => {
+	probabilityToGetTails = 0.9;
+});
